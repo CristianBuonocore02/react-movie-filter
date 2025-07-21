@@ -1,8 +1,7 @@
-// 🔽 Importiamo React (ci servono useState e useEffect)
-import { useState, useEffect } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
-// 🎞️ Lista iniziale dei film, ciascuno con un titolo e un genere
+import { useState, useEffect } from "react";
+
+
 const movies = [
   { title: "Inception", genre: "Fantascienza" },
   { title: "Il Padrino", genre: "Thriller" },
@@ -26,11 +25,11 @@ export default function App() {
   }, [selectedGenre]);
 
   return (
-    <div style={{ padding: "1rem", maxWidth: "600px", margin: "auto" }}>
+    <div className="container py-4">
 
-      <h1>Film Library</h1>
+      <h1 className="mb-4">Film Library</h1>
 
-      <div style={{ marginBottom: "1rem" }}>
+      <div className="mb-3">
         <label>Filtra per genere:</label>
         <select
           value={selectedGenre}
@@ -44,7 +43,7 @@ export default function App() {
         </select>
       </div>
 
-      <ul>
+      <ul className="list-group">
         {filteredMovies.map((film) => (
           <li key={film.title}>
             <strong>{film.title}</strong> – <em>{film.genre}</em>
