@@ -30,8 +30,8 @@ export default function App() {
       <h1 className="mb-4">Film Library</h1>
 
       <div className="mb-3">
-        <label>Filtra per genere:</label>
-        <select
+        <label className="pb-2">Filtra per genere:</label>
+        <select className="form-select"
           value={selectedGenre}
           onChange={(e) => setSelectedGenre(e.target.value)}
         >
@@ -43,7 +43,7 @@ export default function App() {
         </select>
       </div>
 
-      <ul className="list-group">
+      <ul className="list-group card p-3 list-unstyled">
         {filteredMovies.map((film) => (
           <li key={film.title}>
             <strong>{film.title}</strong> – <em>{film.genre}</em>
